@@ -1,0 +1,213 @@
+{
+  "seo": {
+    "title": "Min Khant — AI Engineer & Python Backend Developer",
+    "description": "Production AI systems, reliable backend architecture, and measurable engineering impact."
+  },
+  "profile": {
+    "name": "Min Khant",
+    "role": "AI Engineer · Python Backend Developer",
+    "location": "Bangkok, Thailand",
+    "email": "minkhant.nexus@gmail.com",
+    "availability": "Open to AI and backend opportunities",
+    "heroIntro": "I build AI systems that survive production.",
+    "summary": "AI engineer with 3+ years across machine learning, LLM systems, and production Python backends. I turn ambiguous business problems into grounded RAG workflows, dependable APIs, and measurable improvements in reliability and latency.",
+    "resumePath": "resume/min-khant-resume.pdf"
+  },
+  "socials": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/MinKhantYCC",
+      "icon": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/min-khant-386199201/",
+      "icon": "linkedin"
+    },
+    {
+      "label": "Medium",
+      "url": "https://medium.com/@linyaungzin99",
+      "icon": "medium"
+    },
+    {
+      "label": "Email",
+      "url": "mailto:minkhant.nexus@gmail.com",
+      "icon": "mail"
+    }
+  ],
+  "metrics": [
+    {
+      "value": "3+",
+      "label": "Years in AI & ML",
+      "detail": "From model experimentation to production systems"
+    },
+    {
+      "value": "97%",
+      "label": "Lower data latency",
+      "detail": "Reduced retrieval time from about 5s to 200ms"
+    },
+    {
+      "value": "90%",
+      "label": "Less manual work",
+      "detail": "Automated routine price and order-status requests"
+    },
+    {
+      "value": "400+",
+      "label": "Vessels supported",
+      "detail": "Five-minute ingestion cycles without server crashes"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Backend Developer",
+      "company": "Canopus Can-Trading Co., Ltd.",
+      "employmentType": "Freelance",
+      "location": "Singapore · Remote",
+      "period": "Aug 2025 — Present",
+      "highlights": [
+        "Built and maintained FastAPI services ingesting five-minute vessel data for more than 400 vessels.",
+        "Restructured the backend into controller, service, and repository layers to make features easier to build and test.",
+        "Optimized PostgreSQL access and introduced post-RBAC caching, cutting retrieval latency by 97% from roughly 5 seconds to 200 milliseconds.",
+        "Deployed hardened services on AWS with Docker, Nginx, rate limiting, and restricted network rules."
+      ]
+    },
+    {
+      "role": "AI Engineer",
+      "company": "GoldSilver Central Co., Ltd.",
+      "employmentType": "Full-time",
+      "location": "Singapore · Remote",
+      "period": "May 2024 — Nov 2025",
+      "highlights": [
+        "Designed and shipped a RAG-powered WhatsApp customer assistant serving more than 100 users.",
+        "Benchmarked four LLM approaches on accuracy, latency, maintainability, and hallucination rate before selecting the production stack.",
+        "Re-architected the assistant as a tool-calling ReAct agent after diagnosing hallucination and tool-selection failures.",
+        "Built FastAPI and Azure webhook automation that reduced the team’s routine manual workload by 90%."
+      ]
+    },
+    {
+      "role": "AI Engineer",
+      "company": "Doctoral Institute for Evidence-Based Policy, Inc.",
+      "employmentType": "Full-time",
+      "location": "Yangon, Myanmar · Hybrid",
+      "period": "Jun 2023 — May 2024",
+      "highlights": [
+        "Benchmarked rule-based minutiae matching, CNN classifiers, and Siamese networks for fingerprint classification, reaching 95% accuracy.",
+        "Developed end-to-end BERT workflows for Japanese sentiment analysis, reaching approximately 80% binary accuracy.",
+        "Resolved half-width and full-width Unicode inconsistencies across large Japanese datasets.",
+        "Built reusable preprocessing and visualization tools and supported production web integration with engineering teams in Japan."
+      ]
+    }
+  ],
+  "skillGroups": [
+    {
+      "name": "LLM systems",
+      "skills": ["RAG", "AI Agents", "ReAct", "Tool Calling", "Prompt Engineering", "LLM Evaluation", "Fine-tuning", "Quantization", "LangChain", "LangGraph", "LangSmith", "OpenAI API", "Ollama", "ChromaDB"]
+    },
+    {
+      "name": "Machine learning",
+      "skills": ["PyTorch", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "NLP", "Computer Vision", "CNN", "Transformers", "Hugging Face"]
+    },
+    {
+      "name": "Backend & data",
+      "skills": ["Python", "FastAPI", "REST APIs", "Celery", "Webhooks", "PostgreSQL", "MongoDB", "Redis", "SQL", "Nginx"]
+    },
+    {
+      "name": "Cloud & delivery",
+      "skills": ["AWS", "Azure", "Docker", "GitHub Actions", "CI/CD", "Git", "Unit Testing", "Load Testing"]
+    },
+    {
+      "name": "Web",
+      "skills": ["React.js", "JavaScript", "Node.js", "HTML", "CSS"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Alferd RAG Document Assistant",
+      "eyebrow": "Production RAG",
+      "description": "A full-stack assistant for grounded PDF question answering with streaming responses, background document processing, and observability.",
+      "outcome": "75% lower document-processing response latency",
+      "visual": "rag",
+      "technologies": ["FastAPI", "React", "LangChain", "Ollama", "Celery", "LangSmith", "PyTest", "Locust"],
+      "links": [
+        { "label": "Backend", "url": "https://github.com/MinKhantYCC/alferd-backend" },
+        { "label": "Frontend", "url": "https://github.com/MinKhantYCC/alferd-frontend" }
+      ]
+    },
+    {
+      "title": "Burmese–English Translation",
+      "eyebrow": "Efficient fine-tuning",
+      "description": "Fine-tuned Meta’s 1.3B-parameter NLLB model on 12,021 sentence pairs using 4-bit quantization and LoRA on a single T4 GPU.",
+      "outcome": "SacreBLEU improved 125.6%, from 11.94 to 26.94",
+      "visual": "translation",
+      "technologies": ["PyTorch", "Transformers", "PEFT", "LoRA", "NF4", "Google Colab"],
+      "links": [
+        { "label": "Read case study", "url": "https://medium.com/@linyaungzin99/fine-tuning-metas-nllb-200-1-3b-e83235a238b4" }
+      ]
+    },
+    {
+      "title": "Loan Repayment Prediction",
+      "eyebrow": "Applied machine learning",
+      "description": "A reproducible classification workflow covering preprocessing, feature engineering, cross-validation, and decision-focused model evaluation.",
+      "outcome": "77% test accuracy on structured financial data",
+      "visual": "classification",
+      "technologies": ["Scikit-learn", "Pandas", "Matplotlib", "Classification", "Cross-validation"],
+      "links": [
+        { "label": "View notebook", "url": "https://www.kaggle.com/code/linyaungzin/loan-prediction-rf/notebook" }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "Fine-Tuning Meta’s NLLB-200 (1.3B)",
+      "excerpt": "Fine-tuning a machine translation model on one T4 GPU with 4-bit quantization and LoRA.",
+      "category": "Machine translation",
+      "publishedAt": "2026-10-10",
+      "readTime": "14 min read",
+      "url": "https://medium.com/@linyaungzin99/fine-tuning-metas-nllb-200-1-3b-e83235a238b4",
+      "visual": "language"
+    },
+    {
+      "title": "Smarter Retrieval with LangChain and Ollama",
+      "excerpt": "A practical comparison of similarity, MMR, threshold, multi-query, self-query, and parent-document retrieval.",
+      "category": "RAG systems",
+      "publishedAt": "2026-10-02",
+      "readTime": "11 min read",
+      "url": "https://medium.com/@linyaungzin99/smarter-retrieval-with-langchain-and-ollama-beyond-basic-similarity-search-615d716e9a8a",
+      "visual": "retrieval"
+    },
+    {
+      "title": "Hosting FastAPI Server on AWS EC2",
+      "excerpt": "A concise walkthrough for launching and configuring a FastAPI service on an EC2 instance.",
+      "category": "Backend & cloud",
+      "publishedAt": "2024-08-15",
+      "readTime": "5 min read",
+      "url": "https://medium.com/@linyaungzin99/hosting-fastapi-server-on-aws-ec2-305ad2568ca9",
+      "visual": "cloud"
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Sc. Computer Science",
+      "institution": "University of the People · Online",
+      "period": "Aug 2024 — Jun 2027 expected"
+    },
+    {
+      "degree": "B.E. Electronics and Communications",
+      "institution": "University of Technology (Yatanarpon Cyber City)",
+      "period": "Dec 2015 — Mar 2020"
+    }
+  ],
+  "certifications": [
+    { "name": "Machine Learning Specialization", "issuer": "Coursera", "issued": "Jan 2023" },
+    { "name": "Deep Learning Specialization", "issuer": "DeepLearning.AI", "issued": "Jul 2023" },
+    { "name": "Associate Data Scientist", "issuer": "DataCamp", "issued": "Jun 2024" },
+    { "name": "Python Django — The Practical Guide", "issuer": "Udemy", "issued": "Jan 2026" },
+    { "name": "Node.js for Beginners", "issuer": "Packt", "issued": "May 2026" },
+    { "name": "Developing Front-End Apps with React", "issuer": "IBM", "issued": "Sep 2026" }
+  ],
+  "languages": [
+    { "name": "Burmese", "proficiency": "Native" },
+    { "name": "English", "proficiency": "C1 · Advanced" },
+    { "name": "Japanese", "proficiency": "JLPT N4" }
+  ]
+}
