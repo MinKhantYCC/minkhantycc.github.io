@@ -5,7 +5,7 @@
 <p align="center">I build AI systems that survive production.</p>
 
 <p align="center">
-  <a href="https://minkhantycc.github.io/MinKhantYCC/">Portfolio</a> ·
+  <a href="https://minkhantycc.github.io/">Portfolio</a> ·
   <a href="https://www.linkedin.com/in/min-khant-386199201/">LinkedIn</a> ·
   <a href="https://medium.com/@linyaungzin99">Medium</a> ·
   <a href="mailto:minkhant.nexus@gmail.com">Email</a> ·
@@ -110,4 +110,4 @@ A reproducible classification workflow covering preprocessing, feature engineeri
 
 If you’re hiring for an AI or backend role, or need help making an AI workflow production-ready, I’d like to hear about it.
 
-[minkhant.nexus@gmail.com](mailto:minkhant.nexus@gmail.com) · [LinkedIn](https://www.linkedin.com/in/min-khant-386199201/) · [Portfolio](https://minkhantycc.github.io/MinKhantYCC/)
+[minkhant.nexus@gmail.com](mailto:minkhant.nexus@gmail.com) · [LinkedIn](https://www.linkedin.com/in/min-khant-386199201/) · [Portfolio](https://minkhantycc.github.io/)
