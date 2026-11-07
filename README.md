@@ -92,6 +92,7 @@ A reproducible classification workflow covering preprocessing, feature engineeri
 
 ## Selected writing
 
+- [FAISS Indexing Methods in Practice](https://medium.com/@linyaungzin99/faiss-indexing-methods-in-practice-flat-ivf-lsh-and-hnsw-with-langchain-and-ollama-437f4d8997f8) — Comparing Flat, IVF, LSH, and HNSW indexes in a LangChain and Ollama RAG workflow.
 - [Fine-Tuning Meta’s NLLB-200 (1.3B)](https://medium.com/@linyaungzin99/fine-tuning-metas-nllb-200-1-3b-e83235a238b4) — Fine-tuning machine translation on one T4 GPU with 4-bit quantization and LoRA.
 - [Smarter Retrieval with LangChain and Ollama](https://medium.com/@linyaungzin99/smarter-retrieval-with-langchain-and-ollama-beyond-basic-similarity-search-615d716e9a8a) — Comparing six retrieval strategies beyond basic similarity search.
 - [Hosting a FastAPI Server on AWS EC2](https://medium.com/@linyaungzin99/hosting-fastapi-server-on-aws-ec2-305ad2568ca9) — A practical walkthrough for deploying FastAPI on EC2.

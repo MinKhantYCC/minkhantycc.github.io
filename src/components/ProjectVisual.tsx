@@ -73,7 +73,21 @@ export function ProjectVisual({ visual }: { visual: string }) {
 export function ArticleVisual({ visual }: { visual: string }) {
   return (
     <div className="article-visual" aria-hidden="true">
-      {visual === 'language' ? (
+      {visual === 'indexing' ? (
+        <svg viewBox="0 0 180 110" role="presentation">
+          <g fill="none" stroke="currentColor">
+            <circle cx="34" cy="55" r="8" />
+            <circle cx="72" cy="28" r="8" />
+            <circle cx="72" cy="82" r="8" />
+            <circle cx="110" cy="42" r="8" />
+            <circle cx="110" cy="68" r="8" />
+            <circle cx="148" cy="55" r="8" />
+            <path d="m42 51 22-18m-22 26 22 18m16-47 22 9m-22 39 22-9m16-24 22 8m-22 12 22-8" />
+          </g>
+          <path d="M34 55 72 28l38 14 38 13" fill="none" stroke="#8f97ff" strokeWidth="2" strokeDasharray="4 4" />
+          <circle cx="148" cy="55" r="4" fill="#8f97ff" />
+        </svg>
+      ) : visual === 'language' ? (
         <svg viewBox="0 0 180 110" role="presentation">
           <path d="M25 30h52v48H25zM103 30h52v48h-52zM77 54h26" fill="none" stroke="currentColor" />
           <text x="51" y="60" textAnchor="middle" fill="currentColor" fontSize="17" fontWeight="700">မြန်</text>

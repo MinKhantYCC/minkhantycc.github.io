@@ -13,6 +13,7 @@ describe('portfolio application', () => {
 
     expect(screen.getByRole('heading', { name: 'I build AI systems that survive production.' })).toBeInTheDocument()
     expect(screen.getByText('Alferd RAG Document Assistant')).toBeInTheDocument()
+    expect(screen.getByText('FAISS Indexing Methods in Practice')).toBeInTheDocument()
     expect(screen.getByText('Fine-Tuning Meta’s NLLB-200 (1.3B)')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Send message' })).toBeInTheDocument()
     expect(screen.queryByTestId('contact-fallback')).not.toBeInTheDocument()
@@ -28,6 +29,10 @@ describe('portfolio application', () => {
     const githubLink = screen.getByRole('link', { name: 'GitHub (opens in a new tab)' })
     expect(githubLink).toHaveAttribute('target', '_blank')
     expect(githubLink).toHaveAttribute('rel', 'noreferrer')
+
+    const faissArticleLink = screen.getByRole('link', { name: 'Read FAISS Indexing Methods in Practice on Medium' })
+    expect(faissArticleLink).toHaveAttribute('target', '_blank')
+    expect(faissArticleLink).toHaveAttribute('rel', 'noreferrer')
   })
 
   it('opens and closes the mobile navigation', async () => {

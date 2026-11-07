@@ -158,6 +158,15 @@
   ],
   "articles": [
     {
+      "title": "FAISS Indexing Methods in Practice",
+      "excerpt": "A hands-on comparison of Flat, IVF, LSH, and HNSW indexes—and how each retrieval strategy shapes a RAG system’s final answer.",
+      "category": "Vector search",
+      "publishedAt": "2026-11-07",
+      "readTime": "14 min read",
+      "url": "https://medium.com/@linyaungzin99/faiss-indexing-methods-in-practice-flat-ivf-lsh-and-hnsw-with-langchain-and-ollama-437f4d8997f8",
+      "visual": "indexing"
+    },
+    {
       "title": "Fine-Tuning Meta’s NLLB-200 (1.3B)",
       "excerpt": "Fine-tuning a machine translation model on one T4 GPU with 4-bit quantization and LoRA.",
       "category": "Machine translation",
