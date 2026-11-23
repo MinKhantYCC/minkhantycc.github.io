@@ -1,4 +1,57 @@
 export function ProjectVisual({ visual }: { visual: string }) {
+  if (visual === 'assistant') {
+    return (
+      <div className="project-visual" aria-hidden="true">
+        <svg viewBox="0 0 520 220" role="presentation">
+          <g fill="none" stroke="currentColor" strokeWidth="1.4">
+            <rect x="150" y="14" width="220" height="192" rx="18" />
+            <rect x="166" y="40" width="132" height="34" rx="10" />
+            <rect x="214" y="86" width="140" height="48" rx="10" stroke="#8f97ff" strokeWidth="2" />
+            <rect x="166" y="146" width="104" height="34" rx="10" />
+            <path d="M62 110h88M370 110h88" strokeDasharray="5 5" />
+          </g>
+          <g fill="currentColor" fontFamily="Inter, sans-serif">
+            <text x="178" y="62" fontSize="11">Gold price today?</text>
+            <text x="226" y="106" fontSize="11" fontWeight="700">Live price checked</text>
+            <text x="226" y="123" fontSize="10" opacity=".7">from your system</text>
+            <text x="178" y="168" fontSize="11">Order status?</text>
+          </g>
+          <g fill="currentColor" fontFamily="ui-monospace, monospace" fontSize="10" textAnchor="middle" opacity=".7">
+            <text x="62" y="98">customer</text>
+            <text x="458" y="98">prices · orders</text>
+          </g>
+        </svg>
+      </div>
+    )
+  }
+
+  if (visual === 'vessels') {
+    return (
+      <div className="project-visual" aria-hidden="true">
+        <svg viewBox="0 0 520 220" role="presentation">
+          <g fill="none" stroke="currentColor" strokeWidth="1.4">
+            <path d="M40 60h70M40 110h70M40 160h70" strokeDasharray="4 5" />
+            <rect x="120" y="44" width="120" height="132" rx="12" />
+            <path d="M240 110h40" strokeDasharray="5 5" />
+            <path d="m268 102 12 8-12 8" />
+            <rect x="290" y="44" width="190" height="132" rx="12" />
+            <path d="M310 150h150" opacity=".45" />
+            <rect x="318" y="96" width="22" height="54" rx="3" opacity=".45" />
+            <rect x="412" y="140" width="22" height="10" rx="3" fill="#8f97ff" stroke="#8f97ff" />
+          </g>
+          <g fill="currentColor" fontFamily="Inter, sans-serif" textAnchor="middle">
+            <text x="180" y="92" fontSize="11" opacity=".65">EVERY 5 MIN</text>
+            <text x="180" y="120" fontSize="22" fontWeight="700">400+</text>
+            <text x="180" y="142" fontSize="11">vessels</text>
+            <text x="329" y="88" fontSize="11" opacity=".65">~5s</text>
+            <text x="423" y="132" fontSize="13" fontWeight="700" fill="#8f97ff">200ms</text>
+            <text x="385" y="70" fontSize="11" opacity=".65">RESPONSE TIME</text>
+          </g>
+        </svg>
+      </div>
+    )
+  }
+
   if (visual === 'translation') {
     return (
       <div className="project-visual" aria-hidden="true">

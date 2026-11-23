@@ -11,8 +11,9 @@ async function fillForm() {
   const user = userEvent.setup()
   await user.type(screen.getByLabelText('Name'), 'Ada Lovelace')
   await user.type(screen.getByLabelText('Email'), 'ada@example.com')
-  await user.type(screen.getByLabelText('Subject'), 'AI engineering role')
-  await user.type(screen.getByLabelText('Message'), 'I would like to discuss a production AI role.')
+  await user.selectOptions(screen.getByLabelText('What do you need help with?'), 'AI chatbot or assistant')
+  await user.selectOptions(screen.getByLabelText(/budget range/i), '$2,000 – $5,000')
+  await user.type(screen.getByLabelText('Project details'), 'We want a WhatsApp assistant for customer questions.')
   return user
 }
 
@@ -29,8 +30,8 @@ describe('ContactForm', () => {
     vi.stubGlobal('fetch', fetchMock)
     render(<ContactForm email="minkhant.nexus@gmail.com" formId="test-form" />)
 
-    await user.click(screen.getByRole('button', { name: 'Send message' }))
-    expect(screen.getByRole('alert')).toHaveTextContent('Please complete every field')
+    await user.click(screen.getByRole('button', { name: 'Send project details' }))
+    expect(screen.getByRole('alert')).toHaveTextContent('Please fill in your name, email, project type')
     expect(fetchMock).not.toHaveBeenCalled()
   })
 
@@ -40,9 +41,13 @@ describe('ContactForm', () => {
     render(<ContactForm email="minkhant.nexus@gmail.com" formId="test-form" />)
     const user = await fillForm()
 
-    await user.click(screen.getByRole('button', { name: 'Send message' }))
+    await user.click(screen.getByRole('button', { name: 'Send project details' }))
     await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1))
     expect(fetchMock).toHaveBeenCalledWith('https://formspree.io/f/test-form', expect.objectContaining({ method: 'POST' }))
+    const body = fetchMock.mock.calls[0][1].body as FormData
+    expect(body.get('projectType')).toBe('AI chatbot or assistant')
+    expect(body.get('budget')).toBe('$2,000 – $5,000')
+    expect(body.get('_subject')).toBe('New enquiry: AI chatbot or assistant from Ada Lovelace')
     expect(await screen.findByRole('status')).toHaveTextContent('Thank you for reaching out.')
   })
 
@@ -51,8 +56,8 @@ describe('ContactForm', () => {
     render(<ContactForm email="minkhant.nexus@gmail.com" formId="test-form" />)
     const user = await fillForm()
 
-    await user.click(screen.getByRole('button', { name: 'Send message' }))
+    await user.click(screen.getByRole('button', { name: 'Send project details' }))
     expect(await screen.findByRole('alert')).toHaveTextContent('Please email minkhant.nexus@gmail.com instead.')
-    expect(screen.getByRole('button', { name: 'Send message' })).toBeEnabled()
+    expect(screen.getByRole('button', { name: 'Send project details' })).toBeEnabled()
   })
 })

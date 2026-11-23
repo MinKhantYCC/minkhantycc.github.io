@@ -32,11 +32,37 @@ export interface ProjectLink {
 export interface Project {
   title: string
   eyebrow: string
-  description: string
+  problem: string
+  solution: string
   outcome: string
   visual: string
   technologies: string[]
   links: ProjectLink[]
+}
+
+export interface TrustPoint {
+  title: string
+  detail: string
+}
+
+export interface Service {
+  title: string
+  summary: string
+  deliverables: string[]
+  proof: string
+}
+
+export interface Testimonial {
+  quote: string
+  name: string
+  role: string
+  company: string
+  url: string
+}
+
+export interface ProcessStep {
+  title: string
+  detail: string
 }
 
 export interface Article {
@@ -75,6 +101,7 @@ export interface PortfolioData {
     name: string
     role: string
     location: string
+    timezone: string
     email: string
     availability: string
     heroIntro: string
@@ -82,10 +109,14 @@ export interface PortfolioData {
     resumePath: string
   }
   socials: SocialLink[]
+  trustPoints: TrustPoint[]
   metrics: Metric[]
+  services: Service[]
+  projects: Project[]
+  testimonials: Testimonial[]
+  process: ProcessStep[]
   experience: ExperienceEntry[]
   skillGroups: SkillGroup[]
-  projects: Project[]
   articles: Article[]
   education: EducationEntry[]
   certifications: Certification[]

@@ -54,12 +54,12 @@ export function HeroVisual() {
           textAnchor="middle"
           dominantBaseline="middle"
         >
-          <text x="97" y="120">DOCUMENTS</text>
-          <text x="523" y="112">RETRIEVAL</text>
-          <text x="97" y="384">FASTAPI</text>
-          <text x="523" y="393">TOOLS</text>
-          <text x="310" y="69">EMBEDDINGS</text>
-          <text x="310" y="450">EVALUATION</text>
+          <text x="97" y="120">YOUR DATA</text>
+          <text x="523" y="112">CHATBOT</text>
+          <text x="97" y="384">WEB APP</text>
+          <text x="523" y="393">AUTOMATION</text>
+          <text x="310" y="69">YOUR TOOLS</text>
+          <text x="310" y="450">MONITORING</text>
         </g>
         <g fill="#8f97ff">
           <circle cx="149" cy="120" r="5" />

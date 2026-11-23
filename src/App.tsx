@@ -1,6 +1,6 @@
 import { ContactForm } from './components/ContactForm'
 import { HeroVisual } from './components/HeroVisual'
-import { ArrowUpRightIcon, DownloadIcon, LocationIcon, MailIcon, SocialIcon } from './components/Icons'
+import { ArrowUpRightIcon, CheckIcon, DownloadIcon, LocationIcon, MailIcon, SocialIcon } from './components/Icons'
 import { Navigation } from './components/Navigation'
 import { ArticleVisual, ProjectVisual } from './components/ProjectVisual'
 import { SectionHeading } from './components/SectionHeading'
@@ -51,14 +51,25 @@ function App() {
               <p className="hero-summary">{portfolio.profile.summary}</p>
               <div className="hero-actions">
                 <a className="button-primary" href="#contact">
-                  Start a conversation <ArrowUpRightIcon />
+                  Book a free discovery call <ArrowUpRightIcon />
                 </a>
-                <a className="button-secondary" href={resumeUrl} download>
-                  Download résumé <DownloadIcon />
+                <a className="button-secondary" href="#work">
+                  See client results
                 </a>
               </div>
+              <ul className="trust-list" aria-label="Working with me">
+                {portfolio.trustPoints.map((point) => (
+                  <li key={point.title}>
+                    <CheckIcon />
+                    <span>
+                      <strong>{point.title}</strong>
+                      {point.detail}
+                    </span>
+                  </li>
+                ))}
+              </ul>
               <div className="hero-meta">
-                <span><LocationIcon />{portfolio.profile.location}</span>
+                <span><LocationIcon />{portfolio.profile.location} · {portfolio.profile.timezone}</span>
                 <a href={`mailto:${portfolio.profile.email}`}><MailIcon />{portfolio.profile.email}</a>
               </div>
               <div className="social-links" aria-label="Social profiles">
@@ -80,7 +91,7 @@ function App() {
           </div>
         </section>
 
-        <section className="metrics-section" aria-label="Selected career impact">
+        <section className="metrics-section" aria-label="Results for clients">
           <div className="container-shell metrics-grid" data-reveal>
             {portfolio.metrics.map((metric) => (
               <article key={metric.label} className="metric-card">
@@ -92,12 +103,134 @@ function App() {
           </div>
         </section>
 
-        <section id="experience" className="page-section" aria-labelledby="experience-title">
+        <section id="services" className="page-section" aria-labelledby="services-title">
           <div className="container-shell">
             <SectionHeading
+              id="services-title"
+              eyebrow="Services"
+              title="How I can help your business."
+              description="Whether you want customers answered faster, manual steps automated, or a slow system fixed, I build software that solves the problem and keeps working after launch."
+            />
+            <div className="services-grid" data-reveal>
+              {portfolio.services.map((service, index) => (
+                <article key={service.title} className="service-card">
+                  <span className="service-index" aria-hidden="true">0{index + 1}</span>
+                  <h3>{service.title}</h3>
+                  <p className="service-summary">{service.summary}</p>
+                  <ul className="service-deliverables">
+                    {service.deliverables.map((item) => <li key={item}><CheckIcon />{item}</li>)}
+                  </ul>
+                  <p className="service-proof"><span>Proof</span>{service.proof}</p>
+                </article>
+              ))}
+            </div>
+
+            <div id="skills" className="tech-strip" data-reveal>
+              <h3>Tools I build with</h3>
+              <dl>
+                {portfolio.skillGroups.map((group) => (
+                  <div key={group.name} className="tech-row">
+                    <dt>{group.name}</dt>
+                    <dd>
+                      <ul className="tag-list" aria-label={`${group.name} tools`}>
+                        {group.skills.map((skill) => <li key={skill}>{skill}</li>)}
+                      </ul>
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        <section id="work" className="page-section section-raised" aria-labelledby="work-title">
+          <div className="container-shell">
+            <SectionHeading
+              id="work-title"
+              eyebrow="Client results"
+              title="Real problems, measurable results."
+              description="A few projects, each told the way it happened: the problem, what I built, and the result."
+            />
+            <div className="projects-list" data-reveal>
+              {portfolio.projects.map((project, index) => (
+                <article key={project.title} className="project-card">
+                  <div className="project-card-copy">
+                    <p className="project-number">0{index + 1} · {project.eyebrow}</p>
+                    <h3>{project.title}</h3>
+                    <dl className="case-study">
+                      <div>
+                        <dt>The problem</dt>
+                        <dd>{project.problem}</dd>
+                      </div>
+                      <div>
+                        <dt>What I built</dt>
+                        <dd>{project.solution}</dd>
+                      </div>
+                    </dl>
+                    <p className="project-outcome"><span>Result</span>{project.outcome}</p>
+                    <ul className="tag-list" aria-label={`${project.title} technologies`}>
+                      {project.technologies.map((technology) => <li key={technology}>{technology}</li>)}
+                    </ul>
+                    {project.links.length > 0 ? (
+                      <div className="project-links">
+                        {project.links.map((link) => <ExternalLink key={link.url} link={link} />)}
+                      </div>
+                    ) : null}
+                  </div>
+                  <ProjectVisual visual={project.visual} />
+                </article>
+              ))}
+            </div>
+
+            {portfolio.testimonials.map((testimonial) => (
+              <figure key={testimonial.name} className="testimonial" data-reveal>
+                <blockquote>
+                  <p>“{testimonial.quote}”</p>
+                </blockquote>
+                <figcaption>
+                  <a href={testimonial.url} target="_blank" rel="noreferrer" aria-label={`${testimonial.name} on LinkedIn (opens in a new tab)`}>
+                    {testimonial.name}<ArrowUpRightIcon />
+                  </a>
+                  <span>{testimonial.role}, {testimonial.company}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section id="process" className="page-section" aria-labelledby="process-title">
+          <div className="container-shell">
+            <SectionHeading
+              id="process-title"
+              eyebrow="How we work together"
+              title="A simple process with no surprises."
+              description="You always know what is being built, when it will be ready, and what happens after launch."
+            />
+            <ol className="process-list" data-reveal>
+              {portfolio.process.map((step, index) => (
+                <li key={step.title} className="process-step">
+                  <span className="process-index" aria-hidden="true">0{index + 1}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.detail}</p>
+                </li>
+              ))}
+            </ol>
+            <div className="process-cta" data-reveal>
+              <p>The first call is free and there’s no obligation.</p>
+              <a className="button-primary" href="#contact">
+                Book a free discovery call <ArrowUpRightIcon />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" className="page-section section-raised" aria-labelledby="experience-title">
+          <div className="container-shell">
+            <SectionHeading
+              id="experience-title"
               eyebrow="Experience"
-              title="Systems built for real constraints."
-              description="Work across production AI, high-volume data services, and applied machine learning—with outcomes measured in reliability, latency, and time saved."
+              title="Track record."
+              description="The teams I’ve built production AI and backend systems for, and what changed for them."
             />
             <div className="experience-list" data-reveal>
               {portfolio.experience.map((experience, index) => (
@@ -121,65 +254,14 @@ function App() {
           </div>
         </section>
 
-        <section id="skills" className="page-section section-raised" aria-labelledby="skills-title">
-          <div className="container-shell">
-            <SectionHeading
-              eyebrow="Skills"
-              title="A practical AI and backend toolkit."
-              description="The technologies I use to move from an uncertain problem to a monitored, testable production system."
-            />
-            <div className="skills-grid" data-reveal>
-              {portfolio.skillGroups.map((group, index) => (
-                <article key={group.name} className={index === 0 ? 'skill-card skill-card-featured' : 'skill-card'}>
-                  <div className="skill-card-heading">
-                    <span>0{index + 1}</span>
-                    <h3>{group.name}</h3>
-                  </div>
-                  <ul>
-                    {group.skills.map((skill) => <li key={skill}>{skill}</li>)}
-                  </ul>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="projects" className="page-section" aria-labelledby="projects-title">
-          <div className="container-shell">
-            <SectionHeading
-              eyebrow="Selected projects"
-              title="Evidence, not just experiments."
-              description="Three projects that show how I evaluate models, engineer supporting systems, and communicate measurable results."
-            />
-            <div className="projects-list" data-reveal>
-              {portfolio.projects.map((project, index) => (
-                <article key={project.title} className="project-card">
-                  <div className="project-card-copy">
-                    <p className="project-number">0{index + 1} · {project.eyebrow}</p>
-                    <h3>{project.title}</h3>
-                    <p className="project-description">{project.description}</p>
-                    <p className="project-outcome">{project.outcome}</p>
-                    <ul className="tag-list" aria-label={`${project.title} technologies`}>
-                      {project.technologies.map((technology) => <li key={technology}>{technology}</li>)}
-                    </ul>
-                    <div className="project-links">
-                      {project.links.map((link) => <ExternalLink key={link.url} link={link} />)}
-                    </div>
-                  </div>
-                  <ProjectVisual visual={project.visual} />
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="writing" className="page-section section-raised" aria-labelledby="writing-title">
+        <section id="writing" className="page-section" aria-labelledby="writing-title">
           <div className="container-shell">
             <div className="section-heading-row">
               <SectionHeading
+                id="writing-title"
                 eyebrow="Writing"
                 title="Notes from the workbench."
-                description="Practical walkthroughs and technical explorations from model tuning to production deployment."
+                description="Practical write-ups on how I build and test AI and backend systems."
               />
               <a className="text-link" href="https://medium.com/@linyaungzin99" target="_blank" rel="noreferrer">
                 All articles <ArrowUpRightIcon />
@@ -206,9 +288,14 @@ function App() {
           </div>
         </section>
 
-        <section id="credentials" className="page-section" aria-labelledby="credentials-title">
+        <section id="credentials" className="page-section section-raised" aria-labelledby="credentials-title">
           <div className="container-shell">
-            <SectionHeading eyebrow="Credentials" title="A foundation built across disciplines." />
+            <div className="section-heading-row">
+              <SectionHeading id="credentials-title" eyebrow="Background" title="Education & credentials." />
+              <a className="text-link" href={resumeUrl} download>
+                Download résumé (PDF) <DownloadIcon />
+              </a>
+            </div>
             <div className="credentials-grid" data-reveal>
               <div className="credential-panel credential-panel-wide">
                 <h3>Education</h3>
@@ -249,8 +336,8 @@ function App() {
           <div className="container-shell contact-grid">
             <div className="contact-copy" data-reveal>
               <p className="section-eyebrow">Contact</p>
-              <h2 id="contact-title">Let’s build something reliable.</h2>
-              <p>If you’re hiring for an AI or backend role, or need help making an AI workflow production-ready, I’d like to hear about it.</p>
+              <h2 id="contact-title">Tell me what’s slowing your team down.</h2>
+              <p>Share a few details about your project and I’ll reply within 24 hours to set up a free discovery call. No commitment, no hard sell.</p>
               <a className="contact-email" href={`mailto:${portfolio.profile.email}`}>
                 <MailIcon />
                 <span>
@@ -265,6 +352,10 @@ function App() {
                   </a>
                 ))}
               </div>
+              <p className="contact-hiring">
+                Hiring for a full-time role? I’m open to the right AI or backend position.{' '}
+                <a href={resumeUrl} download>Download my résumé</a>.
+              </p>
             </div>
             <div className="contact-form-shell" data-reveal>
               <ContactForm email={portfolio.profile.email} formId={formId} />
@@ -276,7 +367,7 @@ function App() {
       <footer className="site-footer">
         <div className="container-shell footer-shell">
           <p>© {new Date().getFullYear()} {portfolio.profile.name}</p>
-          <p>AI systems · Backend architecture · Bangkok</p>
+          <p>AI web apps · Chatbots · Automation · Backend · Bangkok (GMT+7)</p>
           <a href="#about">Back to top ↑</a>
         </div>
       </footer>

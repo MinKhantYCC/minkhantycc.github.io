@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { CloseIcon, MenuIcon } from './Icons'
 
 const navigationItems = [
-  ['About', 'about'],
+  ['Services', 'services'],
+  ['Results', 'work'],
+  ['Process', 'process'],
   ['Experience', 'experience'],
-  ['Skills', 'skills'],
-  ['Projects', 'projects'],
   ['Writing', 'writing'],
   ['Contact', 'contact'],
 ] as const
@@ -27,7 +27,7 @@ export function Navigation() {
           ))}
         </nav>
 
-        <a className="nav-cta" href="#contact">Let’s talk</a>
+        <a className="nav-cta" href="#contact">Book a call</a>
 
         <button
           className="menu-button"
